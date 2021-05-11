@@ -9,4 +9,9 @@ public class IndexController {
     public String index(){
         return "index"; // src/main/resources/templates/index.mustache
     }
+
+    @GetMapping("/posts/save")
+    public String postsSave(){
+        return "posts-save";
+    }
 }
