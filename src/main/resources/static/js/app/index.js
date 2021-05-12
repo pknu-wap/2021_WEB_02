@@ -55,7 +55,7 @@ var main = {    //다른 js랑 겹치지 않게
             alert(JSON.stringify(error));
         });
     },
-    delete : function () {
+    delete : function () {      //삭제
         var id = $('#id').val();
 
         $.ajax({
