@@ -1,10 +1,10 @@
-package com.web02.test.springboot.service.posts;
-import com.web02.test.springboot.domain.posts.Posts;
-import com.web02.test.springboot.domain.posts.PostsRepository;
-import com.web02.test.springboot.web.dto.PostsListResponseDto;
-import com.web02.test.springboot.web.dto.PostsResponseDto;
-import com.web02.test.springboot.web.dto.PostsSaveRequestDto;
-import com.web02.test.springboot.web.dto.PostsUpdateRequestDto;
+package com.web02.springboot.service.posts;
+import com.web02.springboot.domain.posts.Posts;
+import com.web02.springboot.domain.posts.PostsRepository;
+import com.web02.springboot.web.dto.PostsResponseDto;
+import com.web02.springboot.web.dto.PostsUpdateRequestDto;
+import com.web02.springboot.web.dto.PostsListResponseDto;
+import com.web02.springboot.web.dto.PostsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

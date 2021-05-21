@@ -1,5 +1,5 @@
-package com.web02.test.springboot.web.dto;
-import com.web02.test.springboot.domain.posts.Posts;
+package com.web02.springboot.web.dto;
+import com.web02.springboot.domain.posts.Posts;
 import lombok.Getter;
 
 @Getter
@@ -9,6 +9,7 @@ public class PostsResponseDto {
     private String title;
     private String content;
     private String author;
+
 
     public PostsResponseDto(Posts entity) {
         this.id = entity.getId();

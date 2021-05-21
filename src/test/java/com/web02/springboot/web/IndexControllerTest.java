@@ -1,4 +1,4 @@
-package com.web02.test.springboot.web;
+package com.web02.springboot.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

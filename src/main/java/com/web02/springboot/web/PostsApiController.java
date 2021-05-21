@@ -1,10 +1,10 @@
-package com.web02.test.springboot.web;
+package com.web02.springboot.web;
 
-import com.web02.test.springboot.service.posts.PostsService;
-import com.web02.test.springboot.web.dto.PostsListResponseDto;
-import com.web02.test.springboot.web.dto.PostsResponseDto;
-import com.web02.test.springboot.web.dto.PostsSaveRequestDto;
-import com.web02.test.springboot.web.dto.PostsUpdateRequestDto;
+import com.web02.springboot.service.posts.PostsService;
+import com.web02.springboot.web.dto.PostsListResponseDto;
+import com.web02.springboot.web.dto.PostsResponseDto;
+import com.web02.springboot.web.dto.PostsSaveRequestDto;
+import com.web02.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

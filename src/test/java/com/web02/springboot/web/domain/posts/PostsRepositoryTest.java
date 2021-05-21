@@ -1,16 +1,15 @@
 // save, findAll 기능 수행
-package com.web02.test.springboot.web.domain.posts;
+package com.web02.springboot.web.domain.posts;
 
-import com.web02.test.springboot.domain.posts.Posts;
-import com.web02.test.springboot.domain.posts.PostsRepository;
+import com.web02.springboot.domain.posts.Posts;
+import com.web02.springboot.domain.posts.PostsRepository;
+import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.swing.*;
 
 
 import java.time.LocalDateTime;
@@ -65,7 +64,7 @@ public class PostsRepositoryTest {
 
        System.out.println(">>>>>>>>>>>createDate="+posts.getCreatedDate()+", modifiedDate="+posts.getModifiedDate());
 
-       assertThat(posts.getCreatedDate()).isAfter(now);
-       assertThat(posts.getModifiedDate()).isAfter(now);
+       Assertions.assertThat(posts.getCreatedDate()).isAfter(now);
+       Assertions.assertThat(posts.getModifiedDate()).isAfter(now);
     }
 }

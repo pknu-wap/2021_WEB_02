@@ -1,6 +1,6 @@
-package com.web02.test.springboot.domain.posts;
+package com.web02.springboot.domain.posts;
 
-import com.web02.test.springboot.domain.BaseTimeEntity;
+import com.web02.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,11 +29,13 @@ public class Posts extends BaseTimeEntity {
 
     private String author;
 
+
     @Builder
     public Posts(String title, String content, String author) {
         this.title = title;
         this.content = content;
         this.author = author;
+
     }
 
     public void update(String title, String content) {
