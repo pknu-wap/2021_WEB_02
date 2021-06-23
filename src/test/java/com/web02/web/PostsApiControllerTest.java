@@ -1,8 +1,8 @@
-package com.web02.springboot.web;
-import com.web02.springboot.domain.posts.Posts;
-import com.web02.springboot.domain.posts.PostsRepository;
-import com.web02.springboot.web.dto.PostsUpdateRequestDto;
-import com.web02.springboot.web.dto.PostsSaveRequestDto;
+package com.web02.web;
+import com.web02.domain.posts.Posts;
+import com.web02.domain.posts.PostsRepository;
+import com.web02.web.dto.PostsUpdateRequestDto;
+import com.web02.web.dto.PostsSaveRequestDto;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.After;

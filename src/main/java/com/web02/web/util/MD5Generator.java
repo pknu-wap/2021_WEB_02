@@ -1,5 +1,5 @@
 //파일  MD5 체크섬의 값으로 서버에 저장
-package com.web02.springboot.web.util;
+package com.web02.web.util;
 
 
 import java.io.UnsupportedEncodingException;

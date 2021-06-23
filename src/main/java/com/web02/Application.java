@@ -1,4 +1,4 @@
-package com.web02.springboot;
+package com.web02;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

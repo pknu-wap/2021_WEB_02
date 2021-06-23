@@ -1,12 +1,15 @@
-package com.web02.springboot.web;
+package com.web02.web;
 
-import com.web02.springboot.service.posts.PostsService;
-import com.web02.springboot.web.dto.PostsResponseDto;
+import com.web02.service.posts.PostsService;
+import com.web02.web.dto.PostsResponseDto;
+import com.web02.web.dto.PostsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;    //model 을 사용하여 View에 데이터 전달
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
 @Controller
@@ -21,9 +24,10 @@ public class IndexController {
     }
 
     @GetMapping("/posts/save")  //글 등록화면 이동
-    public String postsSave() {
+    public String postsSave(@RequestParam("file") MultipartFile files, PostsSaveRequestDto postsSaveRequestDto) {
         return "posts-save";
     }
+
 
     @GetMapping("/posts/update/{id}")    //글 수정화면 이동,id로 구분
     public String postsUpdate(@PathVariable Long id, Model model){
@@ -32,4 +36,6 @@ public class IndexController {
         return "posts-update";
     }
 
+    private class FilesDto {
+    }
 }

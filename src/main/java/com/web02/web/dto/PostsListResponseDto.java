@@ -1,6 +1,6 @@
-package com.web02.springboot.web.dto;
+package com.web02.web.dto;
 
-import com.web02.springboot.domain.posts.Posts;
+import com.web02.domain.posts.Posts;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

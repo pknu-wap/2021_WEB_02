@@ -1,12 +1,13 @@
-package com.web02.springboot.web.dto;
+package com.web02.web.dto;
 
-import com.web02.springboot.domain.Files.Files;
-import com.web02.springboot.domain.posts.Posts;
-import lombok.Builder;
-import lombok.Getter;
+import com.web02.domain.files.Files;
+import lombok.*;
 
 @Getter
-public class PostsFileDto
+@Setter
+@ToString
+@NoArgsConstructor
+public class FilesDto
 {
     private Long id;
     private String origFileName;
@@ -21,7 +22,7 @@ public class PostsFileDto
                 .build();
     }
     @Builder
-    public PostsFileDto(Long id, String origFileName, String filename, String filepath){
+    public FilesDto(Long id, String origFileName, String filename, String filepath){
         this.id=id;
         this.origFileName=origFileName;
         this.filename=filename;

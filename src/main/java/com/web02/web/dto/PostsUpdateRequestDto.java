@@ -1,4 +1,4 @@
-package com.web02.springboot.web.dto;
+package com.web02.web.dto;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,8 +1,8 @@
 // save, findAll 기능 수행
-package com.web02.springboot.web.domain.posts;
+package com.web02.web.domain.posts;
 
-import com.web02.springboot.domain.posts.Posts;
-import com.web02.springboot.domain.posts.PostsRepository;
+import com.web02.domain.posts.Posts;
+import com.web02.domain.posts.PostsRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.Test;
