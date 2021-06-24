@@ -1,5 +1,6 @@
 package com.web02.web;
 
+import com.web02.config.auth.dto.SessionUser;
 import com.web02.service.posts.PostsService;
 import com.web02.web.dto.PostsResponseDto;
 import com.web02.web.dto.PostsSaveRequestDto;
@@ -11,15 +12,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")    //   첫화면 index+ 글 조회
     public String index(Model model){       //model: postService.findAllDesc()로 가져온 결과 posts로 index.mustache에 전달
         model.addAttribute("posts", postsService.findAllDesc());
+
+        SessionUser user=(SessionUser) httpSession.getAttribute("user");
+        if(user!=null){ //유저값이 없을때만
+            model.addAttribute("userName",user.getName());
+        }
         return "index"; // src/main/resources/templates/index.mustache
     }
 
@@ -36,7 +44,6 @@ public class IndexController {
         return "posts-update";
     }
 
-    private class FilesDto {
 
-    }
+
 }
