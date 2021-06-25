@@ -1,5 +1,6 @@
 package com.web02.web;
 
+import com.web02.config.auth.LoginUser;
 import com.web02.config.auth.dto.SessionUser;
 import com.web02.service.posts.PostsService;
 import com.web02.web.dto.PostsResponseDto;
@@ -21,10 +22,9 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")    //   첫화면 index+ 글 조회
-    public String index(Model model){       //model: postService.findAllDesc()로 가져온 결과 posts로 index.mustache에 전달
+    public String index(Model model,@LoginUser SessionUser user){       //model: postService.findAllDesc()로 가져온 결과 posts로 index.mustache에 전달
         model.addAttribute("posts", postsService.findAllDesc());
 
-        SessionUser user=(SessionUser) httpSession.getAttribute("user");
         if(user!=null){ //유저값이 없을때만
             model.addAttribute("userName",user.getName());
         }
@@ -32,7 +32,7 @@ public class IndexController {
     }
 
     @GetMapping("/posts/save")  //글 등록화면 이동
-    public String postsSave(@RequestParam("file") MultipartFile files, PostsSaveRequestDto postsSaveRequestDto) {
+    public String postsSave() {
         return "posts-save";
     }
 

@@ -19,13 +19,13 @@ public class Files {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private String origFileName; //실제 파일이름
 
-    @Column(nullable = false)
+    @Column
     private String filename;    //업로드시 파일이름
 
-    @Column(nullable = false)
+    @Column
     private String filepath;    //파일    저장 위치
 
     @Builder
