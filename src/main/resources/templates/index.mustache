@@ -5,16 +5,16 @@
     <div class="col-md-12">
         <div class="row">
             <div class=col-md-6">
-                <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>    <!--posts-save.mustache-->
+                <a href="/posts/save" role="button" class="btn btn-light">글 등록</a>    <!--posts-save.mustache-->
                 {{#userName}}
                         Logged in as: <span id="user">{{userName}}</span>
-                        <a href="/logout" role="button" class="btn btn-info active">로그 아웃</a>
+                        <a href="/logout" role="button" class="btn btn-dark">로그 아웃</a>
                 {{/userName}}
                 {{^userName}}
-                        <a href="/oauth2/authorization/google" role="button" class="btn btn-success active">구글 로그인</a>
+                        <a href="/oauth2/authorization/google" role="button" class="btn btn-primary">구글 로그인</a>
                 {{/userName}}
                 {{^userName}}
-                    <a href="/oauth2/authorization/naver" role="button" class="btn btn-secondary active">네이버 로그인</a>
+                    <a href="/oauth2/authorization/naver" role="button" class="btn btn-success">네이버 로그인</a>
                 {{/userName}}
             </div>
         </div>
