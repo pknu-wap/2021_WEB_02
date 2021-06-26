@@ -42,14 +42,5 @@ public class CommentsRepositoryTest {
         assertThat(comments.getCommentId()).isEqualTo(commentId);
         assertThat(comments.getContent()).isEqualTo(content);
     }
-    @Test
-    public void 댓글삭제(){
-        //given
-
-        //when
-
-        //then
-
-    }
 
 }
