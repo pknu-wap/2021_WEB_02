@@ -13,22 +13,19 @@ import javax.persistence.Id;
 @Getter
 @NoArgsConstructor
 public class CommentsDto {
-    private Long id;
-    private Long commentId;
+    private String author;
     private String content;
 
     @Builder
-    public CommentsDto(Long id, Long commentsId, String content){
-        this.id=id;
-        this.commentId=commentsId;
+    public CommentsDto(String content, String author){
         this.content=content;
+        this.author=author;
     }
 
     public Comments toEntity(){
         return Comments.builder()
-                .id(id)
-                .commentId(commentId)
                 .content(content)
+                .author(author)
                 .build();
     }
 }
