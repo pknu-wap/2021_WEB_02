@@ -2,7 +2,7 @@
 var main = {    //다른 js랑 겹치지 않게
     init : function () {
         var _this = this;
-        $('#btn-save').on('click', function () {    //btn-save란 id 엘리먼트 클릭시 save 함수 실행
+        $('#btn-save').on('click', function () {    //btn-save: id 엘리먼트 클릭시 save 함수 실행
             _this.save();
         });
 
@@ -13,6 +13,8 @@ var main = {    //다른 js랑 겹치지 않게
         $('#btn-delete').on('click', function () {  //삭제 함수 실행
             _this.delete();
         });
+
+
     },
     save : function () {
         var data = {
@@ -24,7 +26,7 @@ var main = {    //다른 js랑 겹치지 않게
         $.ajax({
             type: 'POST',       //등록(PostsApiController에서 정의함)
             url: '/api/v1/posts',
-            dataType: 'json',
+             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function() {
@@ -38,6 +40,7 @@ var main = {    //다른 js랑 겹치지 않게
         var data = {
             title: $('#title').val(),
             content: $('#content').val()
+
         };
 
         var id = $('#id').val();
@@ -69,7 +72,8 @@ var main = {    //다른 js랑 겹치지 않게
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
-    }
+    },
+
 
 };
 

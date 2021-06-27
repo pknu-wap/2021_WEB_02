@@ -2,16 +2,13 @@ package com.web02.web;
 
 import com.web02.config.auth.LoginUser;
 import com.web02.config.auth.dto.SessionUser;
-import com.web02.service.posts.PostsService;
+import com.web02.service.PostsService;
 import com.web02.web.dto.PostsResponseDto;
-import com.web02.web.dto.PostsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;    //model 을 사용하여 View에 데이터 전달
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 @RequiredArgsConstructor
@@ -44,6 +41,8 @@ public class IndexController {
         return "posts-update";
     }
 
-
-
+    @GetMapping("/posts/comments")
+    public String postsView(){
+        return "posts-view";
+    }
 }

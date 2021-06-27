@@ -1,4 +1,5 @@
-package com.web02.service.posts;
+package com.web02.service;
+
 import com.web02.domain.posts.Posts;
 import com.web02.domain.posts.PostsRepository;
 import com.web02.web.dto.PostsResponseDto;

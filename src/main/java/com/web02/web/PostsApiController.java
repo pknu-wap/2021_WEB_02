@@ -1,18 +1,9 @@
 package com.web02.web;
 
-import com.web02.service.posts.PostsService;
-import com.web02.web.dto.PostsListResponseDto;
-import com.web02.web.dto.PostsResponseDto;
-import com.web02.web.dto.PostsSaveRequestDto;
-import com.web02.web.dto.PostsUpdateRequestDto;
+import com.web02.service.PostsService;
+import com.web02.web.dto.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,10 +13,13 @@ public class PostsApiController {
 
     private final PostsService postsService;
 
+
     @PostMapping("/api/v1/posts")   //post request 처리
     public Long save(@RequestBody PostsSaveRequestDto requestDto) {
+
         return postsService.save(requestDto);
     }
+
 
     @PutMapping("/api/v1/posts/{id}")   //put request 처리
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {

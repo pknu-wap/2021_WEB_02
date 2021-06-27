@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.web02.domain.BaseTimeEntity;
 import com.web02.domain.posts.Posts;
 import com.web02.domain.user.User;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -15,19 +16,21 @@ import javax.persistence.*;
 public class Comments extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private Long commnetId;
+    private Long commentId;
 
-    @Column(nullable = false)
-    private String contens;
-
-    @Column(nullable = false)
-    private String created_by;
+    @Column(columnDefinition = "TEXT", nullable = false)
+    private String content;
 
 
-
+    @Builder
+    public Comments(Long id, Long commentId, String content){
+        this.id=id;
+        this.commentId=commentId;
+        this.content=content;
+    }
 
 }
